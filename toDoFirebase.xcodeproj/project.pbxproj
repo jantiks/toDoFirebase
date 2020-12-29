@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		98A899BA259B0DA8000BEE59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A899B9259B0DA8000BEE59 /* AppDelegate.swift */; };
 		98A899BC259B0DA8000BEE59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A899BB259B0DA8000BEE59 /* SceneDelegate.swift */; };
-		98A899BE259B0DA8000BEE59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A899BD259B0DA8000BEE59 /* ViewController.swift */; };
+		98A899BE259B0DA8000BEE59 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A899BD259B0DA8000BEE59 /* LoginViewController.swift */; };
 		98A899C1259B0DA8000BEE59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A899BF259B0DA8000BEE59 /* Main.storyboard */; };
 		98A899C3259B0DAA000BEE59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98A899C2259B0DAA000BEE59 /* Assets.xcassets */; };
 		98A899C6259B0DAA000BEE59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98A899C4259B0DAA000BEE59 /* LaunchScreen.storyboard */; };
+		98A899CE259B1972000BEE59 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A899CD259B1972000BEE59 /* TasksViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		98A899B6259B0DA8000BEE59 /* toDoFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toDoFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98A899B9259B0DA8000BEE59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98A899BB259B0DA8000BEE59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98A899BD259B0DA8000BEE59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98A899BD259B0DA8000BEE59 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		98A899C0259B0DA8000BEE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98A899C2259B0DAA000BEE59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98A899C5259B0DAA000BEE59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98A899C7259B0DAA000BEE59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98A899CD259B1972000BEE59 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		98A899B8259B0DA8000BEE59 /* toDoFirebase */ = {
 			isa = PBXGroup;
 			children = (
-				98A899B9259B0DA8000BEE59 /* AppDelegate.swift */,
 				98A899BB259B0DA8000BEE59 /* SceneDelegate.swift */,
-				98A899BD259B0DA8000BEE59 /* ViewController.swift */,
+				98A899D0259B1A48000BEE59 /* Controller */,
+				98A899CF259B1A31000BEE59 /* Supporting-files */,
+			);
+			path = toDoFirebase;
+			sourceTree = "<group>";
+		};
+		98A899CF259B1A31000BEE59 /* Supporting-files */ = {
+			isa = PBXGroup;
+			children = (
+				98A899B9259B0DA8000BEE59 /* AppDelegate.swift */,
 				98A899BF259B0DA8000BEE59 /* Main.storyboard */,
 				98A899C2259B0DAA000BEE59 /* Assets.xcassets */,
 				98A899C4259B0DAA000BEE59 /* LaunchScreen.storyboard */,
 				98A899C7259B0DAA000BEE59 /* Info.plist */,
 			);
-			path = toDoFirebase;
+			path = "Supporting-files";
+			sourceTree = "<group>";
+		};
+		98A899D0259B1A48000BEE59 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				98A899BD259B0DA8000BEE59 /* LoginViewController.swift */,
+				98A899CD259B1972000BEE59 /* TasksViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98A899BE259B0DA8000BEE59 /* ViewController.swift in Sources */,
+				98A899BE259B0DA8000BEE59 /* LoginViewController.swift in Sources */,
+				98A899CE259B1972000BEE59 /* TasksViewController.swift in Sources */,
 				98A899BA259B0DA8000BEE59 /* AppDelegate.swift in Sources */,
 				98A899BC259B0DA8000BEE59 /* SceneDelegate.swift in Sources */,
 			);
@@ -285,7 +305,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = toDoFirebase/Info.plist;
+				INFOPLIST_FILE = "toDoFirebase/Supporting-files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = toDoFirebase/Info.plist;
+				INFOPLIST_FILE = "toDoFirebase/Supporting-files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
