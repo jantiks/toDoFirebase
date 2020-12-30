@@ -9,19 +9,22 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+
     @IBOutlet var warnLabel: UILabel!
-    @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var emailTF: UITextField!
+    @IBOutlet var passwordTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        warnLabel.isHidden = true
     }
 
-    @IBAction func loginTapped(_ sender: UIButton) {
+    @IBAction func loginTapped(_ sender: Any) {
     }
-    @IBAction func registerTapped(_ sender: UIButton) {
+    
+    @IBAction func registerTapped(_ sender: Any) {
     }
+    
     
 }
 
