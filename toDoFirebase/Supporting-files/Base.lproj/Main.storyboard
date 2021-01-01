@@ -12,11 +12,11 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="533-by-hqH" customClass="TasksViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ch1-L4-dec">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oWn-kQ-Nb2">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" red="0.45710992810000001" green="0.78515076640000003" blue="0.96742528679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -52,12 +52,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOR-eg-zas" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2021.7391304347827" y="112.5"/>
+            <point key="canvasLocation" x="2020" y="108"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Ka0-mv-dXK">
             <objects>
-                <viewController id="HdH-cr-hhJ" customClass="LoginViewController" customModule="toDoFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="HdH-cr-hhJ" customClass="LoginViewController" customModule="toDoFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vrw-qF-hLO" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,7 @@
                         <outlet property="emailTF" destination="JiK-DK-sgr" id="YMY-N8-2Lk"/>
                         <outlet property="passwordTF" destination="It9-mZ-jDD" id="H74-OD-An0"/>
                         <outlet property="warnLabel" destination="vcf-zd-ogW" id="5ga-6W-y4j"/>
+                        <segue destination="mP1-HE-mah" kind="show" identifier="tasksSegue" id="orx-kR-NX0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVH-Pp-gEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -184,7 +185,7 @@
         <!--Navigation Controller-->
         <scene sceneID="eXq-II-kzD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="mP1-HE-mah" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="mP1-HE-mah" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="854-bV-Pk9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SwA-ZO-J5H">
@@ -198,7 +199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1G-4h-XIz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1111.5942028985507" y="112.5"/>
+            <point key="canvasLocation" x="1113" y="108"/>
         </scene>
     </scenes>
 </document>

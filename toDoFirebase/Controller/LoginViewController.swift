@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(kdDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kdDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
-        warnLabel.isHidden = true
+        warnLabel.alpha = 0
     }
     @objc func kdDidShow(notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
@@ -30,9 +31,34 @@ class LoginViewController: UIViewController {
     @objc func kdDidHide() {
         (self.view as! UIScrollView).contentSize = CGSize(width: self.view.bounds.size.width, height: self.view.bounds.size.height)
     }
+    
+    func displayWarningLabel(withText text: String) {
+        warnLabel.text = text
+        UIView.animate(withDuration: 3, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: [.curveEaseInOut], animations: { [weak self] in
+            self?.warnLabel.alpha = 1
+        }) { [weak self] complete in
+            self?.warnLabel.alpha = 0
+            
+        }
+    }
 
     @IBAction func loginTapped(_ sender: Any) {
-        print("login tapped")
+        guard let email = emailTF.text , let password = passwordTF.text , !email.isEmpty, !password.isEmpty else {
+            displayWarningLabel(withText: "Info is incorrect")
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+            if error != nil {
+                self?.displayWarningLabel(withText: "Error occured")
+                return
+            }
+            if authResult != nil {
+                self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
+                return
+            } else {
+                self?.displayWarningLabel(withText: "User doesn't exist")
+            }
+        }
     }
     
     @IBAction func registerTapped(_ sender: Any) {
