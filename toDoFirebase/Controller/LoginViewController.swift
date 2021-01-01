@@ -43,25 +43,38 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(_ sender: Any) {
+        performSegue(withIdentifier: "tasksSegue", sender: nil)
+//        guard let email = emailTF.text , let password = passwordTF.text , !email.isEmpty, !password.isEmpty else {
+//            displayWarningLabel(withText: "Info is incorrect")
+//            return
+//        }
+//        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+//            if error != nil {
+//                self?.displayWarningLabel(withText: "Error occured")
+//                return
+//            }
+//            if authResult?.user != nil {
+//                self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
+//                return
+//            } else {
+//                self?.displayWarningLabel(withText: "User doesn't exist")
+//            }
+//        }
+    }
+    
+    @IBAction func registerTapped(_ sender: Any) {
         guard let email = emailTF.text , let password = passwordTF.text , !email.isEmpty, !password.isEmpty else {
             displayWarningLabel(withText: "Info is incorrect")
             return
         }
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-            if error != nil {
-                self?.displayWarningLabel(withText: "Error occured")
-                return
-            }
-            if authResult != nil {
-                self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
-                return
-            } else {
-                self?.displayWarningLabel(withText: "User doesn't exist")
+        Auth.auth().createUser(withEmail: email, password: password) {
+            [weak self] authResult, error in
+            if error == nil {
+                if authResult?.user != nil {
+                    self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
+                }
             }
         }
-    }
-    
-    @IBAction func registerTapped(_ sender: Any) {
     }
     
     

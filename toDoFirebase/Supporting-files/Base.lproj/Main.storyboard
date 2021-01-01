@@ -62,12 +62,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="usD-io-9SL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usD-io-9SL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="HpM-V9-LlG">
-                                        <rect key="frame" x="0.0" y="184" width="414" height="450.5"/>
+                                        <rect key="frame" x="0.0" y="206" width="414" height="450.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="POD-bR-Xth">
                                                 <rect key="frame" x="117" y="0.0" width="180" height="98.5"/>
@@ -115,10 +114,10 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MiL-rL-SGx">
-                                                <rect key="frame" x="80" y="376.5" width="254" height="74"/>
+                                                <rect key="frame" x="100" y="376.5" width="214" height="74"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im2-bm-NzP">
-                                                        <rect key="frame" x="0.0" y="0.0" width="254" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="214" height="35"/>
                                                         <color key="backgroundColor" red="0.59385119818652843" green="0.59385119818652843" blue="0.59385119818652843" alpha="0.19919124119718309" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="20"/>
                                                         <state key="normal" title="Login">
@@ -129,7 +128,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dTJ-3y-0sZ">
-                                                        <rect key="frame" x="0.0" y="45" width="254" height="29"/>
+                                                        <rect key="frame" x="0.0" y="45" width="214" height="29"/>
                                                         <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="15"/>
                                                         <state key="normal" title="Register">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -148,26 +147,26 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="MiL-rL-SGx" firstAttribute="leading" secondItem="HpM-V9-LlG" secondAttribute="leading" constant="80" id="6x9-4J-95N"/>
-                                            <constraint firstAttribute="trailing" secondItem="HUa-hD-zIi" secondAttribute="trailing" constant="50" id="IDW-jH-X5x"/>
-                                            <constraint firstAttribute="trailing" secondItem="MiL-rL-SGx" secondAttribute="trailing" constant="80" id="Xz7-71-FgV"/>
-                                            <constraint firstItem="HUa-hD-zIi" firstAttribute="leading" secondItem="HpM-V9-LlG" secondAttribute="leading" constant="50" id="ZyY-YL-jfS"/>
+                                            <constraint firstAttribute="trailing" secondItem="MiL-rL-SGx" secondAttribute="trailing" constant="100" id="CMV-lv-Fxo"/>
+                                            <constraint firstAttribute="trailing" secondItem="HUa-hD-zIi" secondAttribute="trailing" constant="50" id="CXr-rx-ThT"/>
+                                            <constraint firstItem="MiL-rL-SGx" firstAttribute="leading" secondItem="HpM-V9-LlG" secondAttribute="leading" constant="100" id="Jvn-dQ-bXi"/>
+                                            <constraint firstItem="HUa-hD-zIi" firstAttribute="leading" secondItem="HpM-V9-LlG" secondAttribute="leading" constant="50" id="Pe3-zg-Ua7"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="HpM-V9-LlG" secondAttribute="trailing" id="ZJu-2S-yr0"/>
-                                    <constraint firstItem="HpM-V9-LlG" firstAttribute="centerY" secondItem="usD-io-9SL" secondAttribute="centerY" id="fCe-Dg-liV"/>
-                                    <constraint firstItem="HpM-V9-LlG" firstAttribute="leading" secondItem="usD-io-9SL" secondAttribute="leading" id="s11-8J-yUM"/>
+                                    <constraint firstItem="HpM-V9-LlG" firstAttribute="centerY" secondItem="usD-io-9SL" secondAttribute="centerY" id="LnB-R9-k4a"/>
+                                    <constraint firstAttribute="trailing" secondItem="HpM-V9-LlG" secondAttribute="trailing" id="adS-5D-UOT"/>
+                                    <constraint firstItem="HpM-V9-LlG" firstAttribute="leading" secondItem="usD-io-9SL" secondAttribute="leading" id="vqe-4t-gbU"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="usD-io-9SL" firstAttribute="bottom" secondItem="mxs-1E-3EY" secondAttribute="bottom" id="h2U-Oy-iu3"/>
-                            <constraint firstItem="usD-io-9SL" firstAttribute="leading" secondItem="mxs-1E-3EY" secondAttribute="leading" id="rI7-fZ-G0K"/>
-                            <constraint firstItem="mxs-1E-3EY" firstAttribute="trailing" secondItem="usD-io-9SL" secondAttribute="trailing" id="sMB-Xf-RYG"/>
-                            <constraint firstItem="mxs-1E-3EY" firstAttribute="top" secondItem="usD-io-9SL" secondAttribute="top" id="vAx-eF-ZtU"/>
+                            <constraint firstItem="usD-io-9SL" firstAttribute="leading" secondItem="mxs-1E-3EY" secondAttribute="leading" id="B23-qj-8TM"/>
+                            <constraint firstItem="mxs-1E-3EY" firstAttribute="bottom" secondItem="usD-io-9SL" secondAttribute="bottom" id="SNR-FX-2kC"/>
+                            <constraint firstItem="usD-io-9SL" firstAttribute="trailing" secondItem="mxs-1E-3EY" secondAttribute="trailing" id="Wi4-ef-fdy"/>
+                            <constraint firstItem="usD-io-9SL" firstAttribute="top" secondItem="Vrw-qF-hLO" secondAttribute="top" id="wzo-tp-5CI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mxs-1E-3EY"/>
                     </view>
@@ -180,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVH-Pp-gEB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="186.95652173913044" y="107.8125"/>
+            <point key="canvasLocation" x="185.625" y="107.74647887323944"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eXq-II-kzD">
