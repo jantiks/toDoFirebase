@@ -30,7 +30,21 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     @objc func addTask() {
+        let ac =  UIAlertController(title: "New Task", message: "Add Task", preferredStyle: .alert)
+        ac.addTextField()
+        let save = UIAlertAction(title: "Save", style: .default) {
+            _ in
+            guard let textField = ac.textFields?.first , textField.text != "" else { return }
+            
+            //let task
+            //taskref
+            //
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        ac.addAction(save)
+        ac.addAction(cancel)
         
+        present(ac, animated: true) 
     }
 
 }
