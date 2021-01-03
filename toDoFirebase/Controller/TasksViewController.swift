@@ -7,15 +7,23 @@
 //
 
 import UIKit
+import Firebase
 
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate {
+    var user: User!
+    var ref: DatabaseReference!
+    var tasks = [Task]()
     @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Tasks"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOutTapped))
         
+        guard let currentUser = Auth.auth().currentUser else { return }
+        user = User(user: currentUser)
+        ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,18 +41,28 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let ac =  UIAlertController(title: "New Task", message: "Add Task", preferredStyle: .alert)
         ac.addTextField()
         let save = UIAlertAction(title: "Save", style: .default) {
-            _ in
+            [weak self] _ in
+            guard let superSelf = self else { return }
             guard let textField = ac.textFields?.first , textField.text != "" else { return }
+            let task = Task(title: textField.text!, userId: superSelf.user.uid)
+            let taskRef = superSelf.ref.child(task.title.lowercased())
+            taskRef.setValue(task.convertToDictionary())
             
-            //let task
-            //taskref
-            //
         }
         let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
         ac.addAction(save)
         ac.addAction(cancel)
         
         present(ac, animated: true) 
+    }
+    
+    @objc func signOutTapped() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print(error.localizedDescription)
+        }
+        dismiss(animated: true, completion: nil)
     }
 
 }

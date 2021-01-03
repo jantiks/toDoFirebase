@@ -11,12 +11,17 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    
     @IBOutlet var warnLabel: UILabel!
     @IBOutlet var emailTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference(withPath: "users")
+        
         NotificationCenter.default.addObserver(self, selector: #selector(kdDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(kdDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         warnLabel.alpha = 0
@@ -69,11 +74,17 @@ class LoginViewController: UIViewController {
         }
         Auth.auth().createUser(withEmail: email, password: password) {
             [weak self] authResult, error in
-            if error == nil {
-                if authResult?.user != nil {
-                    self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
-                }
+            guard let superSelf = self else { return }
+            guard let user = authResult?.user else { return }
+            guard error == nil else {
+                print(error?.localizedDescription as Any)
+                return
             }
+            
+            let userRef = superSelf.ref.child(user.uid)
+            userRef.setValue(["email": user.email])
+            
+            
         }
     }
     

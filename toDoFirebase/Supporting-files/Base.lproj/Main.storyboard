@@ -157,7 +157,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.45710992810000001" green="0.78515076640000003" blue="0.96742528679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wBq-s7-WvH" secondAttribute="bottom" id="C28-cI-VQ7"/>
                             <constraint firstItem="wBq-s7-WvH" firstAttribute="top" secondItem="Oi0-mb-tuY" secondAttribute="top" id="YDa-FF-ej6"/>
