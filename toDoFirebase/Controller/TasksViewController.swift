@@ -17,23 +17,44 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Tasks"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign Out", style: .plain, target: self, action: #selector(signOutTapped))
+       
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         guard let currentUser = Auth.auth().currentUser else { return }
         user = User(user: currentUser)
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
+        
+        
+        ref.observe(.value) { [weak self] (DataSnapshot) in
+            var _tasks = [Task]()
+            
+            for item in DataSnapshot.children {
+                let task = Task(snapShot: item as! DataSnapshot)
+                _tasks.append(task)
+            }
+            
+            self?.tasks = _tasks
+            self?.tableView.reloadData()
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 5
+        print("this is tasks count \(tasks.count)")
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.backgroundColor = .clear
-        cell.textLabel?.text = "this is cell number \(indexPath.row)"
+        cell.textLabel?.text = tasks[indexPath.row].title
         return cell
     }
     

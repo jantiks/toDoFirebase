@@ -83,6 +83,7 @@ class LoginViewController: UIViewController {
             
             let userRef = superSelf.ref.child(user.uid)
             userRef.setValue(["email": user.email])
+            self?.performSegue(withIdentifier: "tasksSegue", sender: nil)
             
             
         }

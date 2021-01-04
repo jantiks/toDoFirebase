@@ -56,7 +56,7 @@
                                                         <rect key="frame" x="0.0" y="44" width="314" height="34"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -144,7 +144,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wBq-s7-WvH">
                                 <rect key="frame" x="0.0" y="56" width="414" height="786"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.45710992810000001" green="0.78515076640000003" blue="0.96742528679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="86i-N8-o1J">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -155,6 +155,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nc2-Ac-Geu" id="r4H-E3-hej"/>
+                                    <outlet property="delegate" destination="Nc2-Ac-Geu" id="n4b-2N-3ir"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.45710992810000001" green="0.78515076640000003" blue="0.96742528679999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -167,6 +171,9 @@
                         <viewLayoutGuide key="safeArea" id="Oi0-mb-tuY"/>
                     </view>
                     <navigationItem key="navigationItem" id="CIQ-wN-cAK"/>
+                    <connections>
+                        <outlet property="tableView" destination="wBq-s7-WvH" id="D9t-Ee-X8y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ETO-5j-VCl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
