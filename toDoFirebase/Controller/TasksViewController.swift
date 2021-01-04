@@ -53,9 +53,40 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let task = tasks[indexPath.row]
         cell.backgroundColor = .clear
-        cell.textLabel?.text = tasks[indexPath.row].title
+        cell.textLabel?.text = task.title
+        cell.textLabel?.textColor = .white
+        toggleCompletion(cell, isCompleted: task.completed)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print(tasks)
+            let task = tasks[indexPath.row]
+            task.ref?.removeValue()
+            print(tasks)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        let task = tasks[indexPath.row]
+        let isCompleted = !task.completed
+        
+        toggleCompletion(cell, isCompleted: isCompleted)
+        task.ref?.updateChildValues(["completed": isCompleted])
+    }
+    
+    func toggleCompletion(_ cell: UITableViewCell, isCompleted: Bool) {
+        
+        cell.accessoryType = isCompleted ? .checkmark : .none
+        
     }
     
     @objc func addTask() {
